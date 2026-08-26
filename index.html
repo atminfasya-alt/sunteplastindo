@@ -107,13 +107,43 @@
 
      .product-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.product-card{overflow:hidden;padding:0;position:relative;border:1px solid rgba(193,217,236,.95);background:rgba(255,255,255,.96);transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease}.product-card:hover{transform:translateY(-8px);box-shadow:0 24px 60px rgba(8,43,82,.14);border-color:#9ecdf0}.product-visual{height:310px;background:radial-gradient(circle at 20% 15%,rgba(255,255,255,.95),transparent 28%),linear-gradient(145deg,#dff5ff 0%,#f8fcff 46%,#edf5ff 100%);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:18px}.product-visual:before{content:"";position:absolute;width:210px;height:210px;border-radius:50%;left:-75px;bottom:-95px;background:rgba(32,197,106,.11);filter:blur(2px);animation:productBlob 7s ease-in-out infinite}.product-visual:after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 28%,rgba(255,255,255,.48) 50%,transparent 72%);transform:translateX(-120%);animation:productShine 6.5s ease-in-out infinite;pointer-events:none;z-index:3}.product-image{width:100%;height:100%;max-width:94%;max-height:100%;object-fit:contain;object-position:center;position:relative;z-index:2;filter:drop-shadow(0 18px 20px rgba(8,43,82,.15));transform:translateY(0) scale(1);transition:transform .55s cubic-bezier(.2,.8,.2,1),filter .45s ease}.product-card:hover .product-image{transform:translateY(-6px) scale(1.06);filter:drop-shadow(0 24px 26px rgba(8,43,82,.2))}.product-visual::marker{display:none}.product-card:nth-child(2) .product-image,.product-card:nth-child(5) .product-image{animation:productFloat 6.6s ease-in-out infinite .45s}.product-card:nth-child(3) .product-image,.product-card:nth-child(6) .product-image{animation:productFloat 7.2s ease-in-out infinite .9s}.product-card:nth-child(1) .product-image,.product-card:nth-child(4) .product-image{animation:productFloat 6.2s ease-in-out infinite}.product-body{padding:25px}.tag{display:inline-flex;align-items:center;gap:6px;background:#edf7ff;color:var(--blue);font-size:12px;font-weight:800;padding:7px 10px;border-radius:999px;border:1px solid #d4eafa;box-shadow:0 5px 14px rgba(11,92,171,.06)}.tag:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px rgba(32,197,106,.1)}.product-body h3{font-size:25px;margin:12px 0 8px}.product-body p{color:var(--muted);margin:0 0 18px}@keyframes productFloat{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-7px) scale(1.012)}}@keyframes productBlob{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(18px,-10px) scale(1.08)}}@keyframes productShine{0%,58%{transform:translateX(-120%)}78%,100%{transform:translateX(120%)}}
 
-    .sizes{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.size{padding:16px 10px;text-align:center;border:1px solid var(--line);background:#fff;border-radius:14px;font-weight:800;color:var(--navy);transition:.2s}.size:hover{border-color:#8cc9f7;transform:translateY(-2px)} .size small{display:block;color:var(--muted);font-weight:500;font-size:11px;margin-top:3px}
-    .sizes.paranet{grid-template-columns:repeat(7,1fr)}
+
+    .brand-choice{background:radial-gradient(circle at 15% 20%,rgba(22,135,232,.11),transparent 28%),linear-gradient(135deg,#f7fbff,#ffffff 55%,#f5f0ff);position:relative;overflow:hidden}
+    .brand-choice-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+    .brand-choice-card{background:rgba(255,255,255,.92);border:1px solid #dbe8f3;border-radius:24px;overflow:hidden;box-shadow:0 12px 34px rgba(8,43,82,.08);transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease}
+    .brand-choice-card:hover{transform:translateY(-8px);box-shadow:0 22px 50px rgba(8,43,82,.15);border-color:#a9d2f2}
+    .brand-choice-media{height:250px;padding:22px;display:grid;place-items:center;position:relative;overflow:hidden;background:linear-gradient(135deg,#eef8ff,#ffffff 55%,#f5f0ff)}
+    .brand-choice-media:before{content:"";position:absolute;width:210px;height:210px;border-radius:50%;background:rgba(22,135,232,.08);right:-50px;top:-55px;animation:brandOrb 6s ease-in-out infinite}
+    .brand-choice-media:after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent 35%,rgba(255,255,255,.55) 50%,transparent 65%);transform:translateX(-120%);animation:brandShine 5.5s ease-in-out infinite;pointer-events:none}
+    .brand-choice-media img{width:100%;height:100%;object-fit:contain;position:relative;z-index:1;filter:drop-shadow(0 18px 24px rgba(8,43,82,.16));animation:brandFloat 4s ease-in-out infinite;transition:transform .45s ease,filter .45s ease}
+    .brand-choice-card:nth-child(2) .brand-choice-media img{animation-delay:.35s}.brand-choice-card:nth-child(3) .brand-choice-media img{animation-delay:.7s}
+    .brand-choice-card:hover .brand-choice-media img{transform:scale(1.06) rotate(-1deg);filter:drop-shadow(0 24px 30px rgba(8,43,82,.2))}
+    .brand-choice-body{padding:22px 22px 24px}.brand-choice-badge{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;color:var(--blue);background:#edf7ff;border:1px solid #d4eafa;border-radius:999px;padding:6px 9px}.brand-choice-body h3{font-size:22px;margin:11px 0 8px}.brand-choice-body p{margin:0;color:var(--muted);font-size:14px;line-height:1.7}
+    @keyframes brandFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+    @keyframes brandOrb{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-10px,10px) scale(1.08)}}
+    @keyframes brandShine{0%,55%{transform:translateX(-120%)}75%,100%{transform:translateX(120%)}}
+    .paranet-density{background:radial-gradient(circle at 88% 12%,rgba(32,197,106,.12),transparent 30%),linear-gradient(135deg,#f1fbff 0%,#ffffff 52%,#eefaf3 100%);position:relative;overflow:hidden}
+    .density-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;align-items:stretch}
+    .density-card{background:rgba(255,255,255,.94);border:1px solid #d7e8f1;border-radius:20px;overflow:hidden;box-shadow:0 10px 28px rgba(8,43,82,.07);transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;min-width:0}
+    .density-card:hover{transform:translateY(-7px);box-shadow:0 20px 42px rgba(8,43,82,.13);border-color:#9ed4b9}
+    .density-media{aspect-ratio:1/1;background:linear-gradient(145deg,#e9f7ff,#ffffff 55%,#ecfff5);position:relative;overflow:hidden;display:grid;place-items:center}
+    .density-media:before{content:"";position:absolute;width:145%;height:145%;background:repeating-linear-gradient(0deg,rgba(8,43,82,.08) 0 2px,transparent 2px 9px),repeating-linear-gradient(90deg,rgba(8,43,82,.08) 0 2px,transparent 2px 9px);transform:rotate(-7deg) scale(1.18);opacity:var(--mesh-opacity,.18);animation:densityMesh 8s ease-in-out infinite}
+    .density-media:after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent 34%,rgba(255,255,255,.55) 50%,transparent 66%);transform:translateX(-120%);animation:densityShine 5.8s ease-in-out infinite;pointer-events:none}
+    .density-image{width:100%;height:100%;object-fit:cover;position:relative;z-index:1;filter:drop-shadow(0 15px 18px rgba(8,43,82,.12));transition:transform .5s ease,filter .5s ease}
+    .density-card:hover .density-image{transform:scale(1.055);filter:drop-shadow(0 21px 24px rgba(8,43,82,.18))}
+    .density-badge{position:absolute;top:10px;left:10px;z-index:3;background:#082b52;color:#fff;border-radius:999px;padding:6px 9px;font-size:12px;font-weight:900;box-shadow:0 7px 18px rgba(8,43,82,.18)}
+    .density-body{padding:15px 15px 18px}.density-body h3{font-size:19px;margin:0 0 7px}.density-body p{font-size:12.5px;color:var(--muted);margin:0;line-height:1.6}.density-note{margin-top:16px;text-align:center;color:#70849a;font-size:12px}.density-card:nth-child(2) .density-media{--mesh-opacity:.25}.density-card:nth-child(3) .density-media{--mesh-opacity:.33}.density-card:nth-child(4) .density-media{--mesh-opacity:.42}.density-card:nth-child(5) .density-media{--mesh-opacity:.52}
+    @keyframes densityMesh{0%,100%{transform:rotate(-7deg) scale(1.18);background-position:0 0,0 0}50%{transform:rotate(-5deg) scale(1.22);background-position:10px 5px,-6px 4px}}
+    @keyframes densityShine{0%,58%{transform:translateX(-120%)}78%,100%{transform:translateX(120%)}}
+    .calculator{display:grid;grid-template-columns:1.05fr .95fr;gap:24px;align-items:stretch}.calc-product-name{grid-column:1/-1}
+    .calc-result{padding:24px 26px 20px}.calc-result .calc-breakdown{margin-top:14px}.calc-result .calc-wa-wrap{display:flex;justify-content:flex-end;margin-top:16px}.calc-result .calc-wa-compact{padding:10px 14px;border-radius:12px;font-size:13px;gap:8px}.calc-result .calc-wa-compact .wa-btn-icon{width:23px;height:23px;flex-basis:23px}.calc-result .calc-wa-compact .wa-btn-icon svg{width:15px;height:15px}.calc-result .wa-note{text-align:right}
+    .sizes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.size{padding:16px 10px;text-align:center;border:1px solid var(--line);background:#fff;border-radius:14px;font-weight:800;color:var(--navy);transition:.2s}.size:hover{border-color:#8cc9f7;transform:translateY(-2px)} .size small{display:block;color:var(--muted);font-weight:500;font-size:11px;margin-top:3px}
+    .sizes.paranet{grid-template-columns:repeat(3,minmax(0,1fr))}
 
     .use-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.use{padding:24px 15px;text-align:center;border-radius:18px;background:#fff;border:1px solid var(--line);font-weight:800}.use .icon{margin:0 auto 12px}
 
     .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}.steps:before{content:"";position:absolute;top:34px;left:11%;right:11%;height:2px;background:#cfe1f1}.step{position:relative;text-align:center;padding:0 14px}.step-num{width:68px;height:68px;border-radius:50%;margin:0 auto 18px;background:#fff;border:2px solid #9dcaea;color:var(--blue);display:grid;place-items:center;font-weight:900;position:relative;z-index:1;box-shadow:0 8px 25px rgba(8,43,82,.08)}.step h3{font-size:17px}.step p{font-size:13px;color:var(--muted)}
-    .calculator{display:grid;grid-template-columns:1.05fr .95fr;gap:24px;align-items:stretch}
+    .calculator{display:grid;grid-template-columns:1.05fr .95fr;gap:24px;align-items:stretch}.calc-product-name{grid-column:1/-1}
     .calc-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow)}
     .calc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
     .field{display:grid;gap:7px}
@@ -152,16 +182,18 @@
 
     .wa-float{position:fixed;right:22px;bottom:22px;z-index:60;display:flex;align-items:center;gap:10px;padding:12px 16px 12px 12px;border-radius:999px;background:linear-gradient(135deg,#25d366,#0fb957);color:#06341b;font-weight:900;box-shadow:0 15px 35px rgba(20,135,76,.3);animation:pulse 2.5s infinite,waNudge 7s ease-in-out infinite;overflow:visible;border:1px solid rgba(255,255,255,.55)}.wa-float .wa-btn-icon{width:38px;height:38px;flex-basis:38px;animation:waIconFloat 2s ease-in-out infinite}.wa-float .wa-btn-icon svg{width:23px;height:23px}.wa-float .wa-btn-text{font-size:14px}.wa-float:before{content:"";position:absolute;inset:-4px;border-radius:999px;border:1px solid rgba(37,211,102,.34);animation:floatRing 2.4s ease-out infinite;pointer-events:none}@keyframes pulse{0%,100%{box-shadow:0 15px 35px rgba(20,135,76,.25)}50%{box-shadow:0 15px 42px rgba(20,135,76,.5)}}@keyframes waNudge{0%,88%,100%{transform:translateX(0)}91%{transform:translateX(-3px)}94%{transform:translateX(3px)}97%{transform:translateX(-2px)}}@keyframes floatRing{0%{transform:scale(.98);opacity:.8}70%,100%{transform:scale(1.1);opacity:0}}
     .reveal{opacity:0;transform:translateY(20px);transition:.7s ease}.reveal.show{opacity:1;transform:none}
-    @media(max-width:1050px){.navlinks{gap:13px}.hero-grid{gap:30px}.feature-grid{grid-template-columns:repeat(2,1fr)}.sizes.paranet{grid-template-columns:repeat(5,1fr)}}
+    @media(max-width:1050px){.navlinks{gap:13px}.hero-grid{gap:30px}.feature-grid{grid-template-columns:repeat(2,1fr)}.sizes,.sizes.paranet{grid-template-columns:repeat(3,minmax(0,1fr))}}
     @media(max-width:800px){
       .brand-logo{width:135px;max-height:42px}
       .section{padding:64px 0}.nav{height:64px}.navlinks{display:none;position:absolute;top:64px;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);padding:12px 4%;flex-direction:column;gap:0;box-shadow:0 15px 30px rgba(8,43,82,.08)}.navlinks.open{display:flex}.navlinks a{padding:12px 0;text-align:center}.menu-btn{display:block}.nav-actions .btn{display:none}
       .hero{padding:42px 0 52px}.hero-grid{grid-template-columns:1fr;text-align:center}.hero-copy>p{margin:0 auto}.hero-actions{justify-content:center}.hero-media{width:100%}.slide{min-height:360px;padding:27px}.product-visual{height:285px}.slide-content{margin:auto auto 0}.slide h2{font-size:31px}.slider-arrows{right:15px;top:15px}
-      .proof-grid{grid-template-columns:repeat(2,1fr)}.proof-item{font-size:12px;flex-direction:column;gap:6px}.feature-grid,.product-grid,.testi-grid{grid-template-columns:1fr}.sizes{grid-template-columns:repeat(2,1fr)}.sizes.paranet{grid-template-columns:repeat(2,1fr)}.use-grid{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:1fr;gap:25px}.steps:before{left:50%;top:35px;bottom:35px;width:2px;height:auto;right:auto}.step{padding:0 30px}.footer-grid{grid-template-columns:1fr;text-align:center}.footer p{margin-left:auto;margin-right:auto}.copyright{flex-direction:column;text-align:center}.wa-float{right:15px;bottom:15px;width:58px;height:58px;padding:0;justify-content:center}.wa-float .wa-btn-text{display:none}
+      .proof-grid{grid-template-columns:repeat(2,1fr)}.proof-item{font-size:12px;flex-direction:column;gap:6px}.feature-grid,.product-grid,.testi-grid{grid-template-columns:1fr}.sizes,.sizes.paranet{grid-template-columns:repeat(3,minmax(0,1fr))}.use-grid{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:1fr;gap:25px}.steps:before{left:50%;top:35px;bottom:35px;width:2px;height:auto;right:auto}.step{padding:0 30px}.footer-grid{grid-template-columns:1fr;text-align:center}.footer p{margin-left:auto;margin-right:auto}.copyright{flex-direction:column;text-align:center}.wa-float{right:15px;bottom:15px;width:58px;height:58px;padding:0;justify-content:center}.wa-float .wa-btn-text{display:none}
       .section-head p{font-size:15px}.hero-copy h1{font-size:42px}.card{text-align:center}.card .icon{margin:0 auto 17px}
       .brand-track{animation-duration:22s}.brand-item{min-width:150px;height:64px;padding:10px 14px}.brand-item img{max-width:108px;max-height:32px}.product-visual{height:240px;padding:14px}.product-image{max-width:92%}
-      .calculator{grid-template-columns:1fr}.calc-grid{grid-template-columns:1fr}.calc-result{min-height:330px}.calc-result .btn{align-self:stretch}
+      .calculator{grid-template-columns:1fr}.calc-grid{grid-template-columns:1fr}.calc-result{min-height:330px}.calc-result .btn{align-self:flex-end}.calc-result .calc-wa-wrap{justify-content:flex-end}
     }
+    @media(max-width:1050px){.density-grid{grid-template-columns:repeat(5,minmax(155px,1fr));overflow-x:auto;padding-bottom:8px;scroll-snap-type:x proximity}.density-card{scroll-snap-align:start}}
+    @media(max-width:480px){.brand-choice-grid{grid-template-columns:1fr}.sizes,.sizes.paranet{grid-template-columns:repeat(2,minmax(0,1fr))}.density-grid{grid-template-columns:repeat(5,150px);overflow-x:auto;padding-bottom:10px}.density-body h3{font-size:17px}.density-body p{font-size:12px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}.cta-rotate .wa-btn-text{opacity:1!important;transform:none!important}}
   </style>
 
@@ -203,7 +235,7 @@
     <div class="container nav">
       <a class="brand" href="#top" aria-label="Sunte Plastindo"><img id="logoImage" class="brand-logo" src="sunte-logo-navbar.png" alt="Logo Sunte Plastindo"></a>
       <nav class="navlinks" id="navLinks">
-        <a href="#top">Beranda</a><a href="#produk">Produk</a><a href="#ukuran-terpal">Ukuran</a><a href="#kalkulator">Kalkulator</a><a href="#keunggulan">Keunggulan</a><a href="#faq">FAQ</a>
+        <a href="#top">Beranda</a><a href="#produk">Produk</a><a href="#ukuran-terpal">Ukuran</a><a href="#kerapatan-paranet">Kerapatan</a><a href="#kalkulator">Kalkulator</a><a href="#keunggulan">Keunggulan</a><a href="#faq">FAQ</a>
       </nav>
       <div class="nav-actions"><a class="btn btn-primary wa-btn cta-rotate" data-wa data-cta-rotate href="#"><span class="wa-btn-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20.52 3.48A11.84 11.84 0 0 0 12.04 0C5.5 0 .17 5.32.17 11.88c0 2.09.55 4.13 1.6 5.93L0 24l6.34-1.66a11.78 11.78 0 0 0 5.69 1.45h.01c6.55 0 11.88-5.33 11.88-11.88 0-3.17-1.24-6.15-3.4-8.43ZM12.04 21.77h-.01a9.86 9.86 0 0 1-5.02-1.38l-.36-.21-3.76.99 1.01-3.66-.23-.38a9.92 9.92 0 0 1-1.52-5.25c0-5.47 4.45-9.91 9.91-9.91 2.65 0 5.14 1.03 7.01 2.9a9.85 9.85 0 0 1 2.9 7.01c0 5.47-4.45 9.91-9.93 9.91Zm5.44-7.43c-.3-.15-1.78-.88-2.05-.98-.27-.1-.47-.15-.67.15-.2.3-.77.98-.94 1.18-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.76-1.66-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.46s1.07 2.86 1.22 3.06c.15.2 2.1 3.21 5.08 4.5.71.31 1.26.49 1.69.62.71.22 1.36.19 1.87.11.57-.08 1.78-.73 2.03-1.43.25-.7.25-1.3.17-1.43-.07-.13-.27-.2-.57-.35Z"/></svg></span><span class="wa-btn-text">Konsultasi Sekarang</span></a><button class="menu-btn" id="menuBtn" aria-label="Buka menu">☰</button></div>
     </div>
@@ -264,6 +296,29 @@
       </div>
     </div></section>
 
+    <section class="section brand-choice" id="pilih-merk-terpal">
+      <div class="container">
+        <div class="section-head reveal"><span class="eyebrow">Pilihan Merk</span><h2>Pilih Merk Terpal Sesuai Kebutuhan Anda</h2><p>Kenali karakter masing-masing merk sebelum menentukan terpal yang paling cocok untuk kebutuhan Anda.</p></div>
+        <div class="brand-choice-grid">
+          <article class="brand-choice-card reveal"><div class="brand-choice-media"><img src="cap-kucing.png" alt="Terpal CAP KUCING Sunte Plastindo" loading="lazy"></div><div class="brand-choice-body"><span class="brand-choice-badge">Paling Ekonomis</span><h3>CAP KUCING</h3><p>Terpal paling ekonomis, tersedia ukuran A2 - A12. Cocok untuk kebutuhan yang mengutamakan efisiensi anggaran.</p></div></article>
+          <article class="brand-choice-card reveal"><div class="brand-choice-media"><img src="cap-monster.png" alt="Terpal CAP MONSTER Sunte Plastindo" loading="lazy"></div><div class="brand-choice-body"><span class="brand-choice-badge">Best Seller</span><h3>CAP MONSTER</h3><p>Terpal best seller dengan fitur <strong>UV PROTECTION</strong>, cocok untuk kebutuhan yang membutuhkan perlindungan lebih terhadap paparan matahari.</p></div></article>
+          <article class="brand-choice-card reveal"><div class="brand-choice-media"><img src="cap-jeju.png" alt="Terpal CAP JEJU Sunte Plastindo" loading="lazy"></div><div class="brand-choice-body"><span class="brand-choice-badge">Kelas Premium</span><h3>CAP JEJU</h3><p>Terpal terbaik dikelasnya dengan fitur <strong>double UV PROTECTION</strong>, aman untuk pemakaian jangka panjang.</p></div></article>
+        </div>
+      </div>
+    </section>
+    <section class="section paranet-density" id="kerapatan-paranet">
+      <div class="container">
+        <div class="section-head reveal"><span class="eyebrow">Kerapatan Paranet</span><h2>Tersedia 5 Pilihan Kerapatan Paranet</h2><p>Semakin tinggi persentase kerapatan, semakin rapat jaring dan semakin banyak cahaya yang tersaring. Pilih sesuai kebutuhan area dan jenis tanaman.</p></div>
+        <div class="density-grid">
+          <article class="density-card reveal"><div class="density-media"><span class="density-badge">75%</span><img class="density-image" src="paranet-75.png" alt="Paranet kerapatan 75 persen" loading="lazy"></div><div class="density-body"><h3>75%</h3><p>Paling ringan di antara pilihan ini. Cocok untuk area yang tetap membutuhkan banyak cahaya dan sirkulasi udara, namun ingin sedikit mengurangi intensitas sinar matahari.</p></div></article>
+          <article class="density-card reveal"><div class="density-media"><span class="density-badge">85%</span><img class="density-image" src="paranet-85.png" alt="Paranet kerapatan 85 persen" loading="lazy"></div><div class="density-body"><h3>85%</h3><p>Memberikan teduh lebih terasa dibanding 75%. Cocok untuk area yang membutuhkan pengurangan cahaya lebih banyak tetapi masih ingin menjaga pencahayaan alami.</p></div></article>
+          <article class="density-card reveal"><div class="density-media"><span class="density-badge">90%</span><img class="density-image" src="paranet-90.png" alt="Paranet kerapatan 90 persen" loading="lazy"></div><div class="density-body"><h3>90%</h3><p>Pilihan seimbang untuk kebutuhan peneduhan yang lebih kuat. Cocok ketika area perlu dibuat jauh lebih teduh tanpa langsung memilih kerapatan tertinggi.</p></div></article>
+          <article class="density-card reveal"><div class="density-media"><span class="density-badge">95%</span><img class="density-image" src="paranet-95.png" alt="Paranet kerapatan 95 persen" loading="lazy"></div><div class="density-body"><h3>95%</h3><p>Lebih rapat dan memberikan tingkat peneduhan tinggi. Cocok untuk area yang membutuhkan pengurangan paparan cahaya matahari secara lebih maksimal.</p></div></article>
+          <article class="density-card reveal"><div class="density-media"><span class="density-badge">100%</span><img class="density-image" src="paranet-100.png" alt="Paranet kerapatan 100 persen" loading="lazy"></div><div class="density-body"><h3>100%</h3><p>Kerapatan paling tinggi di daftar ini. Cocok untuk kebutuhan peneduhan yang mengutamakan privasi visual dan pengurangan cahaya yang sangat kuat.</p></div></article>
+        </div>
+        <div class="density-note">Catatan: tingkat teduh nyata dapat berbeda tergantung jenis material, warna, kondisi pemasangan, dan lingkungan sekitar.</div>
+      </div>
+    </section>
     <section class="section soft-bg" id="ukuran-terpal"><div class="container">
       <div class="section-head reveal"><span class="eyebrow">Ukuran Terpal</span><h2>Pilihan Ukuran Terpal</h2><p>Gunakan ukuran di bawah sebagai referensi. Butuh ukuran lain? Silakan konsultasikan.</p></div>
       <div class="sizes reveal">
@@ -309,6 +364,15 @@
                   <option value="paranet">Paranet</option>
                 </select>
               </div>
+              <div class="field calc-product-name">
+                <label for="calcProductName">Nama Produk</label>
+                <select id="calcProductName">
+                  <option value="terpal-monster">Terpal Jadi CAP MONSTER</option>
+                  <option value="terpal-kucing">Terpal Jadi CAP KUCING</option>
+                  <option value="terpal-jeju">Terpal Jadi CAP JEJU</option>
+                  <option value="terpal-roll">Terpal Roll</option>
+                </select>
+              </div>
               <div class="field">
                 <label for="calcQty">Jumlah</label>
                 <input id="calcQty" type="number" min="1" step="1" value="1" inputmode="numeric">
@@ -341,12 +405,13 @@
             <div class="calc-detail" id="calcDetail">4 m² × 1 pcs</div>
             <div class="calc-breakdown">
               <div><span>Produk</span><strong id="calcProductLabel">Terpal</strong></div>
+              <div><span>Nama Produk</span><strong id="calcProductNameLabel">Terpal Jadi CAP MONSTER</strong></div>
               <div><span>Luas per lembar</span><strong id="calcArea">4 m²</strong></div>
               <div><span>Harga per m²</span><strong id="calcPriceLabel">Rp 0</strong></div>
               <div><span>Jumlah</span><strong id="calcQtyLabel">1 pcs</strong></div>
             </div>
-            <a class="btn btn-primary wa-btn" id="calcWa" href="#"><span class="wa-btn-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20.52 3.48A11.84 11.84 0 0 0 12.04 0C5.5 0 .17 5.32.17 11.88c0 2.09.55 4.13 1.6 5.93L0 24l6.34-1.66a11.78 11.78 0 0 0 5.69 1.45h.01c6.55 0 11.88-5.33 11.88-11.88 0-3.17-1.24-6.15-3.4-8.43ZM12.04 21.77h-.01a9.86 9.86 0 0 1-5.02-1.38l-.36-.21-3.76.99 1.01-3.66-.23-.38a9.92 9.92 0 0 1-1.52-5.25c0-5.47 4.45-9.91 9.91-9.91 2.65 0 5.14 1.03 7.01 2.9a9.85 9.85 0 0 1 2.9 7.01c0 5.47-4.45 9.91-9.93 9.91Zm5.44-7.43c-.3-.15-1.78-.88-2.05-.98-.27-.1-.47-.15-.67.15-.2.3-.77.98-.94 1.18-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.76-1.66-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.46s1.07 2.86 1.22 3.06c.15.2 2.1 3.21 5.08 4.5.71.31 1.26.49 1.69.62.71.22 1.36.19 1.87.11.57-.08 1.78-.73 2.03-1.43.25-.7.25-1.3.17-1.43-.07-.13-.27-.2-.57-.35Z"/></svg></span><span class="wa-btn-text">Cek Harga via WhatsApp</span></a>
-            <div class="wa-note">Estimasi belum termasuk faktor lain seperti ongkir, jahitan khusus, ring, atau spesifikasi produk tertentu.</div>
+            <div class="calc-wa-wrap"><a class="btn btn-primary wa-btn calc-wa-compact" id="calcWa" href="#"><span class="wa-btn-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20.52 3.48A11.84 11.84 0 0 0 12.04 0C5.5 0 .17 5.32.17 11.88c0 2.09.55 4.13 1.6 5.93L0 24l6.34-1.66a11.78 11.78 0 0 0 5.69 1.45h.01c6.55 0 11.88-5.33 11.88-11.88 0-3.17-1.24-6.15-3.4-8.43ZM12.04 21.77h-.01a9.86 9.86 0 0 1-5.02-1.38l-.36-.21-3.76.99 1.01-3.66-.23-.38a9.92 9.92 0 0 1-1.52-5.25c0-5.47 4.45-9.91 9.91-9.91 2.65 0 5.14 1.03 7.01 2.9a9.85 9.85 0 0 1 2.9 7.01c0 5.47-4.45 9.91-9.93 9.91Zm5.44-7.43c-.3-.15-1.78-.88-2.05-.98-.27-.1-.47-.15-.67.15-.2.3-.77.98-.94 1.18-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.76-1.66-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.46s1.07 2.86 1.22 3.06c.15.2 2.1 3.21 5.08 4.5.71.31 1.26.49 1.69.62.71.22 1.36.19 1.87.11.57-.08 1.78-.73 2.03-1.43.25-.7.25-1.3.17-1.43-.07-.13-.27-.2-.57-.35Z"/></svg></span><span class="wa-btn-text">Cek Harga</span></a></div>
+            <div class="wa-note">Estimasi belum termasuk ongkir, jahitan khusus, ring, atau spesifikasi produk tertentu.</div>
           </div>
         </div>
       </div>
@@ -379,19 +444,15 @@
           <p>Distributor Terpal & Paranet Terlengkap se-Indonesia. Pilihan produk dan ukuran untuk berbagai kebutuhan.</p>
           <a class="btn btn-primary wa-btn cta-rotate" data-wa data-cta-rotate href="#"><span class="wa-btn-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20.52 3.48A11.84 11.84 0 0 0 12.04 0C5.5 0 .17 5.32.17 11.88c0 2.09.55 4.13 1.6 5.93L0 24l6.34-1.66a11.78 11.78 0 0 0 5.69 1.45h.01c6.55 0 11.88-5.33 11.88-11.88 0-3.17-1.24-6.15-3.4-8.43ZM12.04 21.77h-.01a9.86 9.86 0 0 1-5.02-1.38l-.36-.21-3.76.99 1.01-3.66-.23-.38a9.92 9.92 0 0 1-1.52-5.25c0-5.47 4.45-9.91 9.91-9.91 2.65 0 5.14 1.03 7.01 2.9a9.85 9.85 0 0 1 2.9 7.01c0 5.47-4.45 9.91-9.93 9.91Zm5.44-7.43c-.3-.15-1.78-.88-2.05-.98-.27-.1-.47-.15-.67.15-.2.3-.77.98-.94 1.18-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.76-1.66-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.46s1.07 2.86 1.22 3.06c.15.2 2.1 3.21 5.08 4.5.71.31 1.26.49 1.69.62.71.22 1.36.19 1.87.11.57-.08 1.78-.73 2.03-1.43.25-.7.25-1.3.17-1.43-.07-.13-.27-.2-.57-.35Z"/></svg></span><span class="wa-btn-text">Konsultasi Sekarang</span></a>
         </div>
-        <div class="footer-column"><h3>Navigasi</h3><div class="footer-links"><a href="#top">Beranda</a><a href="#produk">Produk</a><a href="#ukuran-terpal">Ukuran Terpal</a><a href="#ukuran-paranet">Ukuran Paranet</a><a href="#kalkulator">Kalkulator Harga</a><a href="#faq">FAQ</a></div></div>
+        <div class="footer-column"><h3>Navigasi</h3><div class="footer-links"><a href="#top">Beranda</a><a href="#produk">Produk</a><a href="#ukuran-terpal">Ukuran Terpal</a><a href="#ukuran-paranet">Ukuran Paranet</a><a href="#kerapatan-paranet">Kerapatan Paranet</a><a href="#kalkulator">Kalkulator Harga</a><a href="#faq">FAQ</a></div></div>
         <div class="footer-column"><h3>Hubungi Kami</h3><div class="footer-links"><a data-wa href="#">WhatsApp Admin</a><a href="#produk">Lihat Produk</a><a href="#kalkulator">Hitung Perkiraan Harga</a></div></div>
       </div>
-<a href="/" alt="page hit counter" target="_blank" >
-<embed src="//s10.histats.com/102.swf"  flashvars="jver=1&acsid=5047075&domi=4"  quality="high"  width="102" height="47" name="102.swf"  align="middle" type="application/x-shockwave-flash" pluginspage="//www.macromedia.com/go/getflashplayer" wmode="transparent" /></a>
-<img  src="//sstatic1.histats.com/0.gif?5047075&101" alt="web tracker" border="0">
-      <div class="copyright"><span>© 2026 Sunte Plastindo. All rights reserved.</span></div>
+      <div class="copyright"><span>© 2026 Sunte Plastindo. All rights reserved.</span><span>Landing page untuk kebutuhan Google Ads</span></div>
     </div></footer>
 
-  <a class="wa-float wa-btn cta-rotate" data-wa data-cta-rotate href="#" aria-label=""><span class="wa-btn-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20.52 3.48A11.84 11.84 0 0 0 12.04 0C5.5 0 .17 5.32.17 11.88c0 2.09.55 4.13 1.6 5.93L0 24l6.34-1.66a11.78 11.78 0 0 0 5.69 1.45h.01c6.55 0 11.88-5.33 11.88-11.88 0-3.17-1.24-6.15-3.4-8.43ZM12.04 21.77h-.01a9.86 9.86 0 0 1-5.02-1.38l-.36-.21-3.76.99 1.01-3.66-.23-.38a9.92 9.92 0 0 1-1.52-5.25c0-5.47 4.45-9.91 9.91-9.91 2.65 0 5.14 1.03 7.01 2.9a9.85 9.85 0 0 1 2.9 7.01c0 5.47-4.45 9.91-9.93 9.91Zm5.44-7.43c-.3-.15-1.78-.88-2.05-.98-.27-.1-.47-.15-.67.15-.2.3-.77.98-.94 1.18-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.76-1.66-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.46s1.07 2.86 1.22 3.06c.15.2 2.1 3.21 5.08 4.5.71.31 1.26.49 1.69.62.71.22 1.36.19 1.87.11.57-.08 1.78-.73 2.03-1.43.25-.7.25-1.3.17-1.43-.07-.13-.27-.2-.57-.35Z"/></svg></span><span class="wa-btn-text">Konsultasi Sekarang</span></a>
+  <a class="wa-float wa-btn cta-rotate" data-wa data-cta-rotate href="#" aria-label="Hubungi Sunte Plastindo melalui WhatsApp"><span class="wa-btn-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20.52 3.48A11.84 11.84 0 0 0 12.04 0C5.5 0 .17 5.32.17 11.88c0 2.09.55 4.13 1.6 5.93L0 24l6.34-1.66a11.78 11.78 0 0 0 5.69 1.45h.01c6.55 0 11.88-5.33 11.88-11.88 0-3.17-1.24-6.15-3.4-8.43ZM12.04 21.77h-.01a9.86 9.86 0 0 1-5.02-1.38l-.36-.21-3.76.99 1.01-3.66-.23-.38a9.92 9.92 0 0 1-1.52-5.25c0-5.47 4.45-9.91 9.91-9.91 2.65 0 5.14 1.03 7.01 2.9a9.85 9.85 0 0 1 2.9 7.01c0 5.47-4.45 9.91-9.93 9.91Zm5.44-7.43c-.3-.15-1.78-.88-2.05-.98-.27-.1-.47-.15-.67.15-.2.3-.77.98-.94 1.18-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.76-1.66-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.46s1.07 2.86 1.22 3.06c.15.2 2.1 3.21 5.08 4.5.71.31 1.26.49 1.69.62.71.22 1.36.19 1.87.11.57-.08 1.78-.73 2.03-1.43.25-.7.25-1.3.17-1.43-.07-.13-.27-.2-.57-.35Z"/></svg></span><span class="wa-btn-text">Konsultasi Sekarang</span></a>
 
   <script>
-
     /*
       ============================
       CONFIG — EDIT DI SINI
@@ -454,8 +515,24 @@
       // Satuan: Rupiah per m²
       // ==============================================
       PRICES_PER_M2: {
-        terpal: 0,
-        paranet: 0
+        "terpal-monster": 0,
+        "terpal-kucing": 0,
+        "terpal-jeju": 0,
+        "terpal-roll": 0,
+        "paranet-jadi": 0,
+        "paranet-roll": 0
+      },
+      PRODUCT_OPTIONS: {
+        terpal: [
+          { value: "terpal-monster", label: "Terpal Jadi CAP MONSTER" },
+          { value: "terpal-kucing", label: "Terpal Jadi CAP KUCING" },
+          { value: "terpal-jeju", label: "Terpal Jadi CAP JEJU" },
+          { value: "terpal-roll", label: "Terpal Roll" }
+        ],
+        paranet: [
+          { value: "paranet-jadi", label: "Paranet Jadi CAP MONSTER" },
+          { value: "paranet-roll", label: "Paranet Roll" }
+        ]
       }
     };
 
@@ -499,6 +576,7 @@
 
     // Kalkulator harga
     const calcProduct = document.getElementById("calcProduct");
+    const calcProductName = document.getElementById("calcProductName");
     const calcQty = document.getElementById("calcQty");
     const calcLength = document.getElementById("calcLength");
     const calcWidth = document.getElementById("calcWidth");
@@ -506,6 +584,7 @@
     const calcTotal = document.getElementById("calcTotal");
     const calcDetail = document.getElementById("calcDetail");
     const calcProductLabel = document.getElementById("calcProductLabel");
+    const calcProductNameLabel = document.getElementById("calcProductNameLabel");
     const calcArea = document.getElementById("calcArea");
     const calcPriceLabel = document.getElementById("calcPriceLabel");
     const calcQtyLabel = document.getElementById("calcQtyLabel");
@@ -517,6 +596,15 @@
       maximumFractionDigits: 0
     }).format(Number.isFinite(value) ? value : 0);
 
+    function updateProductNames() {
+      if (!calcProduct || !calcProductName) return;
+      const options = CONFIG.PRODUCT_OPTIONS?.[calcProduct.value] || [];
+      const current = calcProductName.value;
+      calcProductName.innerHTML = options.map((item) => `<option value="${item.value}">${item.label}</option>`).join("");
+      if (options.some((item) => item.value === current)) calcProductName.value = current;
+      else if (options[0]) calcProductName.value = options[0].value;
+    }
+
     function calculatePrice() {
       const length = Math.max(0, Number(calcLength?.value) || 0);
       const width = Math.max(0, Number(calcWidth?.value) || 0);
@@ -524,17 +612,20 @@
       const price = Math.max(0, Number(calcPrice?.value) || 0);
       const area = length * width;
       const total = area * price * qty;
-      const productName = calcProduct?.value === "paranet" ? "Paranet" : "Terpal";
+      const categoryName = calcProduct?.value === "paranet" ? "Paranet" : "Terpal";
+      const selectedOption = (CONFIG.PRODUCT_OPTIONS?.[calcProduct?.value] || []).find((item) => item.value === calcProductName?.value);
+      const productName = selectedOption?.label || categoryName;
 
       if (calcTotal) calcTotal.textContent = rupiah(total);
       if (calcDetail) calcDetail.textContent = `${area.toLocaleString("id-ID",{maximumFractionDigits:2})} m² × ${qty} pcs`;
-      if (calcProductLabel) calcProductLabel.textContent = productName;
+      if (calcProductLabel) calcProductLabel.textContent = categoryName;
+      if (calcProductNameLabel) calcProductNameLabel.textContent = productName;
       if (calcArea) calcArea.textContent = `${area.toLocaleString("id-ID",{maximumFractionDigits:2})} m²`;
       if (calcPriceLabel) calcPriceLabel.textContent = rupiah(price);
       if (calcQtyLabel) calcQtyLabel.textContent = `${qty} pcs`;
 
       if (calcWa) {
-        const message = `Halo Sunte Plastindo, saya ingin cek harga ${productName} ukuran ${length} x ${width} meter, jumlah ${qty} pcs. Estimasi kalkulator: ${rupiah(total)}. Mohon konfirmasi harga aktual, spesifikasi, dan ongkir.`;
+        const message = `Halo Sunte Plastindo, saya ingin cek harga ${categoryName} - ${productName}, ukuran ${length} x ${width} meter, jumlah ${qty} pcs. Estimasi kalkulator: ${rupiah(total)}. Mohon konfirmasi harga aktual, spesifikasi, dan ongkir.`;
         calcWa.href = `https://wa.me/${CONFIG.WHATSAPP_NUMBER.replace(/\D/g,"")}?text=${encodeURIComponent(message)}`;
         calcWa.dataset.product = `${productName} ${length}x${width} m`;
       }
@@ -542,18 +633,19 @@
 
     function setConfiguredPrice() {
       if (!calcProduct || !calcPrice) return;
-      const configured = Number(CONFIG.PRICES_PER_M2?.[calcProduct.value] || 0);
+      const configured = Number(CONFIG.PRICES_PER_M2?.[calcProductName?.value] || 0);
       calcPrice.value = configured;
       calculatePrice();
     }
 
-    [calcProduct, calcQty, calcLength, calcWidth, calcPrice].forEach((el) => {
+    [calcProduct, calcProductName, calcQty, calcLength, calcWidth, calcPrice].forEach((el) => {
       if (!el) return;
       el.addEventListener("input", calculatePrice);
       el.addEventListener("change", calculatePrice);
     });
 
-    calcProduct?.addEventListener("change", setConfiguredPrice);
+    calcProduct?.addEventListener("change", () => { updateProductNames(); setConfiguredPrice(); });
+    calcProductName?.addEventListener("change", setConfiguredPrice);
 
     document.querySelectorAll(".calc-preset").forEach((btn) => {
       btn.addEventListener("click", () => {
@@ -566,6 +658,7 @@
       });
     });
 
+    updateProductNames();
     setConfiguredPrice();
 
     const track = (event, params={}) => {
